@@ -45,6 +45,12 @@ io.on("connection", (socket) => {
   });
 });
 
+app.get('/', function (request, response)
+ { 
+    response.send('Hello World ✨🎉✨')
+ }); 
+
+
 httpServer.listen(PORT, () => {
   console.log(`Server Listening on port ${PORT}`);
 });

@@ -1,4 +1,5 @@
 const app = require("express")();
+const dotenv = require("dotenv");
 const httpServer = require("http").createServer(app);
 const io = require("socket.io")(httpServer, {
   cors: {
@@ -6,7 +7,9 @@ const io = require("socket.io")(httpServer, {
     methods: ["GET", "POST"],
   },
 });
-const PORT = 7000;
+// const PORT = 7000;
+dotenv.config();
+const PORT = process.env.PORT;
 
 // app.get("/", (req, res) => {
 //   res.status(200).json({ name: "Server" });

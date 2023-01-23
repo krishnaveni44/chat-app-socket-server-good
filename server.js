@@ -1,6 +1,8 @@
+const cors =require("cors");
 const app = require("express")();
 const dotenv = require("dotenv");
 const httpServer = require("http").createServer(app);
+app.use(cors());
 const io = require("socket.io")(httpServer, {
   cors: {
     origin: "*",
